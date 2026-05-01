@@ -291,10 +291,10 @@ function SlideEcosystem() {
 
 function SlideModules() {
   const modules = [
-    { title: "Student Info System (SIS)", desc: "End-to-end enrollment, unique IDs, tracking, and historical records.", i: UserCircle },
-    { title: "Learning Mgmt (LMS)", desc: "Digital classrooms, remote materials, and AI-assisted recommendations.", i: BookOpen },
+    { title: "Student Info System", desc: "End-to-end enrollment, unique IDs, tracking, and historical records.", i: UserCircle },
+    { title: "Learning Mgmt", desc: "Digital classrooms, remote materials, and AI-assisted recommendations.", i: BookOpen },
     { title: "Examination Mgmt", desc: "Standardized tests across 14 LGAs, auto-grading, and transcript generation.", i: GraduationCap },
-    { title: "Financial Mgmt", desc: "Fee tracking, government funding allocation, and operational compliance.", i: CreditCard }
+    // { title: "Financial Mgmt", desc: "Fee tracking, government funding allocation, and operational compliance.", i: CreditCard }
   ];
   return (
     <div className="flex flex-col h-full justify-center my-auto min-h-max">
@@ -303,7 +303,7 @@ function SlideModules() {
         <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">Robust Modules.</h3>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-3">
         {modules.map((m, i) => (
           <div key={i} className="bg-white border border-gray-200 rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-6 shadow-sm flex flex-row items-center gap-4 hover:border-[#008751]/30 transition-colors">
              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-green-50 border border-green-100 flex items-center justify-center shrink-0">
@@ -422,7 +422,7 @@ function SlideAdvancedTech() {
             <div className="bg-green-50 border border-green-100 rounded-[1.5rem] p-4 flex flex-col items-start justify-center">
               <Fingerprint className="w-5 h-5 text-[#008751] mb-2" />
               <h4 className="font-bold text-gray-900 text-xs md:text-sm mb-1">Biometric Trust</h4>
-              <p className="text-[9px] md:text-[10px] text-gray-600 font-medium leading-relaxed">Cryptographic identification eliminates lost data and fraudulent enrollments.</p>
+              <p className="text-[9px] md:text-[10px] text-gray-600 font-medium leading-relaxed">Cryptographic identification eliminates lost data</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-[1.5rem] p-4 flex flex-col items-start justify-center shadow-sm">
               <MapIcon className="w-5 h-5 text-gray-400 mb-2" />
