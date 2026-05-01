@@ -250,7 +250,7 @@ function SlideSolution() {
                 <ShieldCheck className="text-[#008751] w-5 h-5" />
               </div>
               <h4 className="text-[1rem] md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Secure & Verified</h4>
-              <p className="text-xs md:text-sm text-gray-500 leading-relaxed">Identity management for every teacher and student to eliminate ghost-workers and duplicate records.</p>
+              <p className="text-xs md:text-sm text-gray-500 leading-relaxed">Identity management for every teacher and student to eliminate lost data and duplicate records.</p>
             </div>
           </div>
        </div>
@@ -422,7 +422,7 @@ function SlideAdvancedTech() {
             <div className="bg-green-50 border border-green-100 rounded-[1.5rem] p-4 flex flex-col items-start justify-center">
               <Fingerprint className="w-5 h-5 text-[#008751] mb-2" />
               <h4 className="font-bold text-gray-900 text-xs md:text-sm mb-1">Biometric Trust</h4>
-              <p className="text-[9px] md:text-[10px] text-gray-600 font-medium leading-relaxed">Cryptographic identification eliminates ghost workers and fraudulent enrollments.</p>
+              <p className="text-[9px] md:text-[10px] text-gray-600 font-medium leading-relaxed">Cryptographic identification eliminates lost data and fraudulent enrollments.</p>
             </div>
             <div className="bg-white border border-gray-200 rounded-[1.5rem] p-4 flex flex-col items-start justify-center shadow-sm">
               <MapIcon className="w-5 h-5 text-gray-400 mb-2" />

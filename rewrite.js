@@ -318,7 +318,7 @@ function SlideSolution() {
                 <ShieldCheck className="text-[#008751] w-5 h-5" />
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-3">Secure & Verified</h4>
-              <p className="text-sm text-gray-500 leading-relaxed">Identity management for every teacher and student to eliminate ghost-workers and duplicate records.</p>
+              <p className="text-sm text-gray-500 leading-relaxed">Identity management for every teacher and student to eliminate lost data and duplicate records.</p>
             </div>
           </div>
        </div>

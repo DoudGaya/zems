@@ -16,7 +16,7 @@ const CHALLENGES = [
   },
   {
     icon: UserX,
-    title: "Ghost Workers & Duplicate Students",
+    title: "lost data & Duplicate Students",
     desc: "Without digital verification, payrolls carry inactive staff and reports inflate enrollment with duplicate or non-existent records.",
     color: "orange",
   },

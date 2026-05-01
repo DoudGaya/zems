@@ -12,7 +12,7 @@ const TABS = [
     benefits: [
       "Real-time education dashboards for Ministry and Governor's office",
       "Evidence-based policy planning, budgeting, and resource allocation",
-      "Elimination of ghost workers, duplicate students, and payroll waste",
+      "Elimination of lost data, duplicate students, and payroll waste",
       "Full visibility into school performance, staffing, and infrastructure",
       "Faster response to dropout trends, failing schools, and resource gaps",
       "Stronger reporting to Executive Council, legislature, and development partners",
