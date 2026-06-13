@@ -10,10 +10,12 @@ import { BarChart, Bar, LineChart, Line, AreaChart, Area, ResponsiveContainer, X
 const slides = [
   SlideCover,
   SlideProblem,
+  SlideOutOfSchoolChildren,
   SlideSolution,
   SlideEcosystem,
   SlideModules,
   SlideAdvancedTech,
+  SlidePlatformFlexibility,
   SlideAnalytics,
   SlideRoadmap,
   SlideImpact,
@@ -205,6 +207,104 @@ function SlideProblem() {
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function SlideOutOfSchoolChildren() {
+  const reasonsData = [
+    { reason: "Economic pressure", count: 42 },
+    { reason: "Distance/safety", count: 24 },
+    { reason: "Awareness/trust", count: 19 },
+    { reason: "Documentation", count: 15 },
+  ];
+
+  return (
+    <div className="my-auto min-h-max w-full">
+      <div className="text-center mb-6 md:mb-10">
+        <h2 className="text-xs md:text-sm font-bold tracking-widest text-[#008751] uppercase mb-2 md:mb-3">Inclusion Priority</h2>
+        <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-3 md:mb-4">
+          Out-of-School Children Intelligence.
+        </h3>
+        <p className="text-[1rem] sm:text-lg text-gray-500 font-medium max-w-4xl mx-auto leading-relaxed">
+          We will use structured questionnaire campaigns and mobile survey agents to identify where children are out of school,
+          understand why, and agree on evidence-based action plans once data is sufficient.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-6">
+        {[
+          {
+            title: "Local Market Mapping",
+            desc: "Survey teams capture data in local markets where school-age children are trading during school hours.",
+            icon: MapPin,
+          },
+          {
+            title: "Almajiri Learning Centers",
+            desc: "Field visits document children in non-formal settings and link records to LGA-level planning.",
+            icon: School,
+          },
+          {
+            title: "Household Outreach",
+            desc: "Female survey agents visit homes, count out-of-school children, and capture reasons with follow-up prompts.",
+            icon: Users,
+          },
+        ].map((item, idx) => (
+          <div key={idx} className="bg-white border border-gray-200 rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-5 shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-green-50 border border-green-100 flex items-center justify-center mb-3">
+              <item.icon className="w-5 h-5 text-[#008751]" />
+            </div>
+            <h4 className="text-sm md:text-[1rem] font-bold text-gray-900 mb-1.5">{item.title}</h4>
+            <p className="text-[11px] md:text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+        <div className="bg-white border border-gray-200 rounded-[1.5rem] md:rounded-[2rem] p-4 md:p-6 shadow-sm">
+          <div className="flex items-center justify-between mb-3 md:mb-4">
+            <h4 className="text-sm md:text-[1rem] font-bold text-gray-900">Questionnaire Insight Snapshot</h4>
+            <BarChart3 className="w-4 h-4 text-gray-300" />
+          </div>
+          <div className="h-44 md:h-52">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={reasonsData} margin={{ top: 12, right: 0, left: -24, bottom: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
+                <XAxis dataKey="reason" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#9ca3af" }} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: "#9ca3af" }} tickFormatter={(val) => `${val}%`} />
+                <Tooltip
+                  cursor={{ fill: "#f9fafb" }}
+                  formatter={(value: number) => [`${value}%`, "Respondents"]}
+                  contentStyle={{ borderRadius: "8px", border: "1px solid #e5e7eb", boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.05)", fontSize: "12px" }}
+                />
+                <Bar dataKey="count" fill="#008751" radius={[4, 4, 0, 0]}>
+                  <LabelList dataKey="count" position="top" style={{ fontSize: "9px", fill: "#9ca3af" }} formatter={(val: number) => `${val}%`} />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        <div className="bg-gray-900 rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-6 text-white shadow-sm">
+          <h4 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Evidence Before Action</h4>
+          <p className="text-xs md:text-sm text-gray-300 leading-relaxed mb-4 md:mb-5">
+            Findings from the questionnaire will guide interventions. We avoid assumptions, validate trends across communities,
+            then agree practical action plans with ministry leadership.
+          </p>
+          <div className="space-y-2.5 md:space-y-3">
+            {[
+              "Prioritize communities with highest out-of-school concentration",
+              "Design targeted re-enrollment and community sensitization programs",
+              "Track progress by LGA and adjust interventions quickly",
+            ].map((point, idx) => (
+              <div key={idx} className="flex items-start gap-2.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#008751] mt-1.5 shrink-0" />
+                <p className="text-[11px] md:text-xs text-gray-300 leading-relaxed">{point}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -430,6 +530,69 @@ function SlideAdvancedTech() {
               <p className="text-[9px] md:text-[10px] text-gray-500 font-medium leading-relaxed">Spatially map out 1,000+ facilities to optimize logistical deployment statewide.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SlidePlatformFlexibility() {
+  const features = [
+    {
+      title: "Modular Add-Ons",
+      desc: "New ministry priorities can be delivered as modules without rebuilding the entire platform.",
+      icon: Combine,
+    },
+    {
+      title: "Configurable Surveys",
+      desc: "Questionnaires and approval workflows can be updated as policy needs evolve.",
+      icon: Search,
+    },
+    {
+      title: "Integration Ready",
+      desc: "Secure APIs allow future tools and partner systems to exchange trusted education data.",
+      icon: Database,
+    },
+    {
+      title: "Scales With Government",
+      desc: "From pilot LGAs to statewide programs, rollout can expand in controlled phases.",
+      icon: TrendingUp,
+    },
+  ];
+
+  return (
+    <div className="my-auto min-h-max w-full">
+      <div className="text-center mb-6 md:mb-10">
+        <h2 className="text-xs md:text-sm font-bold tracking-widest text-[#008751] uppercase mb-2 md:mb-3">Future Extensions</h2>
+        <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-3 md:mb-4">
+          Flexible By Design.
+        </h3>
+        <p className="text-[1rem] sm:text-lg md:text-xl text-gray-500 font-medium max-w-3xl mx-auto">
+          The software is built to accept upcoming features the Ministry may recommend along the way.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+        {features.map((feature, idx) => (
+          <div key={idx} className="bg-white border border-gray-200 rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-6 shadow-sm hover:border-[#008751]/30 transition-colors">
+            <div className="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-green-50 border border-green-100 flex items-center justify-center mb-3 md:mb-4">
+              <feature.icon className="w-5 h-5 text-[#008751]" />
+            </div>
+            <h4 className="font-bold text-gray-900 text-sm md:text-lg mb-1.5">{feature.title}</h4>
+            <p className="text-[11px] md:text-sm text-gray-500 leading-relaxed">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-gray-900 rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-7 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h4 className="text-lg md:text-xl font-bold mb-1.5">Built for Continuous Policy Innovation</h4>
+          <p className="text-xs md:text-sm text-gray-300 max-w-3xl">
+            As new priorities emerge, the EMIS can absorb additional features while preserving data continuity and governance controls.
+          </p>
+        </div>
+        <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-[10px] md:text-xs font-semibold tracking-wide uppercase text-gray-200 whitespace-nowrap">
+          Iterative upgrades, zero disruption
         </div>
       </div>
     </div>
